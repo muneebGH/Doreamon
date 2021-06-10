@@ -1,11 +1,12 @@
-# Doreamon(BETA)
+# Doreamon(BETA) [Product Demo](https://vimeo.com/561358748 "DEMO")
 #### Auto meeting re-joiner for google meet.
+
 ## Supports
 - [x] Google Chrome
 - [x] Opera
 - [x] Edge(not tested)
 - [ ] Firefox
-## Installation Guidelines
+## Installation Guidelines:  [Installation demo](https://vimeo.com/561371357 "Installation demo")
 ### Chrome, Opera & Edge
 - Download this code as zip and unzip the downloaded folder.
 - Go to extensions page.
