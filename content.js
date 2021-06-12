@@ -1,4 +1,32 @@
-console.log("doraemon started for google meet");
+console.log("doraemon script injected for this page");
+function isOfflinePage() {
+  let offlineText = Array.prototype.filter.call(
+    document.querySelectorAll("h2"),
+    (e) => e.textContent.toLowerCase().replaceAll(" ", "") === "youareoffline"
+  );
+  if (offlineText.length > 0) {
+    let goOnlineText = Array.prototype.filter.call(
+      document.querySelectorAll("span"),
+      (e) =>
+        e.textContent
+          .toLowerCase()
+          .replaceAll(" ", "")
+          .includes("gobackonlinetousegooglemeet")
+    );
+    return offlineText.length > 0 && goOnlineText.length > 0 ? true : false;
+  } else {
+    return false;
+  }
+}
+
+if (isOfflinePage()) {
+  chrome.storage.local.get(["enabled"], function (result) {
+    if (result && result.enabled) {
+      console.log("offline page: registering reload with 7 seconds wait");
+      setTimeout(() => window.location.reload(), 7000);
+    }
+  });
+}
 
 function getJoinClickableWith(text) {
   let speez = Array.prototype.filter.call(
